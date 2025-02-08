@@ -250,6 +250,15 @@ ol {
   width: 4px;
   /* Сделали очень тонким */
 }
+.content__list::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  /* Серый скролл */
+}
+.content__list::-webkit-scrollbar-track {
+  background: transparent;
+  /* Полностью убираем фон */
+}
+
 
 
 .content__list-item:not(:last-child) {
