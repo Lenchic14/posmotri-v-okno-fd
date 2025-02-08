@@ -41,7 +41,7 @@ ol {
 }
 
 .content {
-  margin: 133px 30px;
+  margin-top: 163px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -311,6 +311,7 @@ ol {
 
 .more-button {
   padding: 6px 146px;
+  display: none;
 }
 
 /* Добавила отступы для обводки кнопки со всех сторон */
