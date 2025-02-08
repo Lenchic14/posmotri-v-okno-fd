@@ -243,8 +243,14 @@ ol {
   overflow-y: auto;
   overflow-x: hidden;
   position: relative;
+  overflow: auto;
   scrollbar-width: none; /* изменен дефолтный скролл */
 }
+.content__list::-webkit-scrollbar {
+  width: 4px;
+  /* Сделали очень тонким */
+}
+
 
 .content__list-item:not(:last-child) {
   padding-block-end: 32px;
