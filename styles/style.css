@@ -13,8 +13,7 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
+  inline-size: 1550px;
   margin: auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -45,7 +44,8 @@ ol {
   margin: 133px 30px;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   gap: 30px;
 }
 
@@ -240,22 +240,10 @@ ol {
 
 .content__list {
   max-block-size: 298px;
-  overflow: auto;
-}
-
-.content__list::-webkit-scrollbar {
-  width: 4px;
-  /* Сделали очень тонким */
-}
-
-.content__list::-webkit-scrollbar-thumb {
-  background: #d9d9d9;
-  /* Серый скролл */
-}
-
-.content__list::-webkit-scrollbar-track {
-  background: transparent;
-  /* Полностью убираем фон */
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  scrollbar-width: none; /* изменен дефолтный скролл */
 }
 
 .content__list-item:not(:last-child) {
