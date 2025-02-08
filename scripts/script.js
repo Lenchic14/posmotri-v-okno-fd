@@ -117,6 +117,17 @@ async function mainMechanics(endpoint) {
     removePreloader(videoContainer, '.preloader');
     removePreloader(cardsContainer, '.preloader');
   }
+
+  document.querySelector('.content__list').addEventListener('scroll', function () {
+    const container = this;
+    const button = document.querySelector('.more-button');
+    
+    if (container.scrollHeight - container.scrollTop === container.clientHeight) {
+      button.style.display = 'block';
+    } else {
+      button.style.display = 'none';
+    }
+  });
 }
 
 /* УТИЛИТЫ */
