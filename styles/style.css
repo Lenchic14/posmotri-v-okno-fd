@@ -2,11 +2,12 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   height: 100%;
-  overflow: hidden;
 }
 
 .page {
@@ -111,7 +112,7 @@ ol {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
-} 
+}
 
 .search-form__textfield {
   cursor: pointer;
@@ -213,7 +214,8 @@ ol {
 /* Блок вывода списка видео */
 .content__details {
   display: grid;
-  grid-template-rows: 1fr auto; /* Контент растягивается, кнопка фиксирована внизу */
+  grid-template-rows: 1fr auto;
+  /* Контент растягивается, кнопка фиксирована внизу */
   height: 100%;
 }
 
@@ -242,15 +244,18 @@ ol {
 }
 
 .content__list::-webkit-scrollbar {
-  width: 4px; /* Сделали очень тонким */
+  width: 4px;
+  /* Сделали очень тонким */
 }
 
 .content__list::-webkit-scrollbar-thumb {
-  background: #d9d9d9; /* Серый скролл */
+  background: #d9d9d9;
+  /* Серый скролл */
 }
 
 .content__list::-webkit-scrollbar-track {
-  background: transparent; /* Полностью убираем фон */
+  background: transparent;
+  /* Полностью убираем фон */
 }
 
 
@@ -304,9 +309,12 @@ ol {
   line-height: 100%;
   text-transform: uppercase;
   padding-block-end: 6px;
-  white-space: nowrap; /* Запретить перенос слов */
-  overflow: hidden; /* Скрыть переполнение */
-  text-overflow: ellipsis; /* Добавить многоточие */
+  white-space: nowrap;
+  /* Запретить перенос слов */
+  overflow: hidden;
+  /* Скрыть переполнение */
+  text-overflow: ellipsis;
+  /* Добавить многоточие */
 }
 
 .content__video-card-description {
@@ -336,31 +344,38 @@ ol {
 
 @media screen and (min-width: 1550px) {
   .result__video-container {
-    min-inline-size: 900px; /* Увеличиваем ширину контейнера видео */
+    min-inline-size: 900px;
+    /* Увеличиваем ширину контейнера видео */
   }
 
   .result__video {
-    block-size: 500px; /* Увеличиваем высоту видео */
+    block-size: 500px;
+    /* Увеличиваем высоту видео */
   }
 
   .search-form__textfield {
-    min-inline-size: 300px; /* Расширяем поле ввода */
+    min-inline-size: 300px;
+    /* Расширяем поле ввода */
   }
 
   .content {
-    gap: 50px; /* Увеличиваем расстояние между блоками */
+    gap: 50px;
+    /* Увеличиваем расстояние между блоками */
   }
 
   .title {
-    font-size: 90px; /* Делаем заголовок больше */
+    font-size: 90px;
+    /* Делаем заголовок больше */
   }
 
   .content__video-card-thumbnail {
-    inline-size: 250px; /* Увеличиваем размер превью */
+    inline-size: 250px;
+    /* Увеличиваем размер превью */
     block-size: 140px;
   }
 
   .more-button {
-    display: block; /* Делаем кнопку "Ещё" видимой */
+    display: block;
+    /* Делаем кнопку "Ещё" видимой */
   }
 }
