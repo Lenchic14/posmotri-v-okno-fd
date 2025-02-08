@@ -41,13 +41,12 @@ ol {
 }
 
 .content {
-  margin: 133px 30px;
+  margin: 160px 30px;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  gap: 30px;
-  align-items: center; /* Центрируем контент */
   justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем контент */
+  gap: 30px;
 }
 
 /* Блок вывода выбранного видео и формы поиска */
