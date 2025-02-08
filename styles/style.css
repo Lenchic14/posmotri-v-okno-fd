@@ -2,24 +2,20 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
-  height: 100%;
+  block-size: 100%;
 }
 
 .page {
-  width: 100%;
-  overflow: hidden; /* Запрещаем прокрутку */
+  inline-size: 1200px;
+  block-size: 100%;
   margin: auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  height: 100vh;
-  block-size: 100vh;
 }
 
 h1,
@@ -42,14 +38,14 @@ ol {
 }
 
 .content {
-  margin: 133px 125px;
+  margin: 133px 30px;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   gap: 30px;
 }
 
-/* Блок видео и формы поиска */
+/* Блок вывода выбранного видео и формы поиска */
 .result {
   display: flex;
   flex-direction: column;
@@ -104,7 +100,7 @@ ol {
   inline-size: fit-content;
 }
 
-.visually-hidden {
+.visually-hidden { /* скрываем дефолтные элементы */
   position: absolute;
   inline-size: 1px;
   block-size: 1px;
@@ -138,8 +134,12 @@ ol {
   outline: none;
 }
 
-
-.search-form__textfield:focus-visible {
+/* Согласно документации https://www.w3.org/TR/selectors-4/#the-focus-visible-pseudo 
+поведение псевдокласса :focus-visible для некоторых элементов, включая input,
+не может быть осуществлено таким образом, как задумано в брифе.
+Браузерные настройки некоторых браузеров все равно будут выставлять рамку для
+:focus-visible при клике мышью или тачпадом.  */
+.search-form__label:has(.search-form__textfield:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
@@ -149,7 +149,7 @@ ol {
   border-left: 1px solid #fff;
 }
 
-.search-form__pseudo-checkbox {
+.search-form__pseudo-checkbox { /* блок с чебоксами */
   cursor: pointer;
   display: block;
   inline-size: 19px;
@@ -157,7 +157,7 @@ ol {
   border: 1px solid #fff;
 }
 
-.search-form__checkbox:checked+.search-form__pseudo-checkbox::before {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
   display: block;
   content: "";
   inline-size: 15px;
@@ -213,10 +213,8 @@ ol {
 
 /* Блок вывода списка видео */
 .content__details {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  /* Контент растягивается, кнопка фиксирована внизу */
-  height: 100%;
+  block-size: 100%;
+  inline-size: 100%;
 }
 
 .title {
@@ -235,29 +233,16 @@ ol {
 
 .content__accent::after {
   position: relative;
+  top: -0.1em;
 }
-
 
 .content__list {
   max-block-size: 298px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  scrollbar-width: none; /* изменен дефолтный скролл */
 }
-
-.content__list::-webkit-scrollbar {
-  width: 4px;
-  /* Сделали очень тонким */
-}
-
-.content__list::-webkit-scrollbar-thumb {
-  background: #d9d9d9;
-  /* Серый скролл */
-}
-
-.content__list::-webkit-scrollbar-track {
-  background: transparent;
-  /* Полностью убираем фон */
-}
-
 
 .content__list-item:not(:last-child) {
   padding-block-end: 32px;
@@ -266,7 +251,7 @@ ol {
 .content__card-link {
   display: block;
   text-decoration: none;
-  color: #d9d9d9;
+  color: #fff;
 }
 
 .content__card-link:focus {
@@ -299,7 +284,6 @@ ol {
 
 .content__video-card-description-container {
   padding-inline-start: 2px;
-  width: 196px;
 }
 
 .content__video-card-title {
@@ -309,12 +293,6 @@ ol {
   line-height: 100%;
   text-transform: uppercase;
   padding-block-end: 6px;
-  white-space: nowrap;
-  /* Запретить перенос слов */
-  overflow: hidden;
-  /* Скрыть переполнение */
-  text-overflow: ellipsis;
-  /* Добавить многоточие */
 }
 
 .content__video-card-description {
@@ -331,51 +309,12 @@ ol {
 
 .more-button {
   padding: 6px 146px;
-  display: none;
 }
 
+/* Добавила отступы для обводки кнопки со всех сторон */
 .more-button:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-}
-
-
-
-
-@media screen and (min-width: 1550px) {
-  .result__video-container {
-    min-inline-size: 900px;
-    /* Увеличиваем ширину контейнера видео */
-  }
-
-  .result__video {
-    block-size: 500px;
-    /* Увеличиваем высоту видео */
-  }
-
-  .search-form__textfield {
-    min-inline-size: 300px;
-    /* Расширяем поле ввода */
-  }
-
-  .content {
-    gap: 50px;
-    /* Увеличиваем расстояние между блоками */
-  }
-
-  .title {
-    font-size: 90px;
-    /* Делаем заголовок больше */
-  }
-
-  .content__video-card-thumbnail {
-    inline-size: 250px;
-    /* Увеличиваем размер превью */
-    block-size: 140px;
-  }
-
-  .more-button {
-    display: block;
-    /* Делаем кнопку "Ещё" видимой */
-  }
+  margin: 2px;
+  padding: 6px 140px;
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
