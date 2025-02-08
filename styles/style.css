@@ -11,8 +11,8 @@ html {
 }
 
 .page {
-  max-width: 1550px;
   width: 100%;
+  overflow: hidden; /* Запрещаем прокрутку */
   margin: auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -42,7 +42,7 @@ ol {
 }
 
 .content {
-  margin: 133px 30px;
+  margin: 133px 125px;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
