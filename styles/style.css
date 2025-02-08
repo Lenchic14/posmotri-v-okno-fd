@@ -240,8 +240,6 @@ ol {
 
 .content__list {
   max-block-size: 298px;
-  overflow-y: auto;
-  overflow-x: hidden;
   position: relative;
   overflow: auto;
   scrollbar-width: none; /* изменен дефолтный скролл */
