@@ -8,8 +8,6 @@
 
 html {
   block-size: 100%;
-  height: 800px;
-  overflow: hidden; /* Запрещаем прокрутку */
 }
 
 .page {
@@ -41,12 +39,13 @@ ol {
 }
 
 .content {
-  margin-top: 320px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 30px;
+  min-height: 100vh; /* Заполняет всю высоту экрана */
+  padding-top: 5vh; /* Вместо жесткого margin */
 }
 
 /* Блок вывода выбранного видео и формы поиска */
@@ -180,14 +179,14 @@ ol {
 }
 
 .button {
-  cursor: pointer;
-  font-size: 18px;
-  color: #fff;
-  font-family: "Fira Sans Condensed", sans-serif;
-  background-color: transparent;
-  font-weight: 400;
-  line-height: 21px;
-  border: 1px solid #fff;
+  cursor: pointer; 
+  font-size: 18px; 
+  color: #fff; /* Наследуемый цвет текста */
+  font-family: "Fira Sans Condensed", sans-serif; 
+  background-color: transparent; 
+  font-weight: 400; 
+  line-height: 21px; 
+  border: 1px solid currentColor; /* Используем currentColor */
 }
 
 .button:focus {
@@ -220,8 +219,8 @@ ol {
 }
 
 .title {
-  padding-block-end: 23px;
-  font-family: "Oswald";
+  padding-block-end: 23px; 
+  font-family: "Oswald", Arial, sans-serif; 
   font-weight: 700;
   font-size: 75px;
   line-height: 93%;
@@ -242,16 +241,18 @@ ol {
   max-block-size: 298px;
   position: relative;
   overflow: auto;
-  scrollbar-width: none; /* изменен дефолтный скролл */
 }
+
 .content__list::-webkit-scrollbar {
   width: 4px;
   /* Сделали очень тонким */
 }
+
 .content__list::-webkit-scrollbar-thumb {
   background: #d9d9d9;
   /* Серый скролл */
 }
+
 .content__list::-webkit-scrollbar-track {
   background: transparent;
   /* Полностью убираем фон */
@@ -302,17 +303,27 @@ ol {
 }
 
 .content__video-card-title {
-  font-family: "Oswald";
+  font-family: "Oswald", Arial, sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 100%;
   text-transform: uppercase;
   padding-block-end: 6px;
+  max-width: 100%; /* Ограничиваем ширину */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
   font-weight: 400;
   line-height: 90%;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Ограничиваем текст четырьмя строками */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: calc(1em * 4); /* Ограничение высоты для 4 строк */
 }
 
 .content__video-card-thumbnail {
@@ -320,6 +331,8 @@ ol {
   justify-self: end;
   inline-size: 194px;
   block-size: 103px;
+  object-fit: cover; /* Сохраняет пропорции, заполняя контейнер */
+  object-position: center; /* Центрирует изображение */
 }
 
 .more-button {
