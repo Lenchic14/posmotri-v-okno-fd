@@ -13,7 +13,7 @@ html {
   width: 100%;
   overflow: hidden;
   /* Запрещаем прокрутку */
-  margin: auto;
+  margin: 0 auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
@@ -42,7 +42,7 @@ ol {
 }
 
 .content {
-  margin: 133px 125px;
+  margin: 133px 135px;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
