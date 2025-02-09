@@ -9,6 +9,7 @@ html {
 }
 
 .page {
+  inline-size: 1550px;
   width: 100%;
   overflow: hidden;
   /* Запрещаем прокрутку */
