@@ -8,6 +8,7 @@
 
 html {
   block-size: 100%;
+  height: auto;
 }
 
 .page {
@@ -42,12 +43,12 @@ ol {
   display: flex;
   flex-direction: row;
   align-items: center;
+  /* Центрирование по вертикали */
   justify-content: center;
+  /* Центрирование по горизонтали */
   gap: 30px;
   min-height: 100vh;
-  /* Заполняет всю высоту экрана */
-  padding-top: 5vh;
-  /* Вместо жесткого margin */
+  /* Минимальная высота = высота экрана */
 }
 
 /* Блок вывода выбранного видео и формы поиска */
@@ -224,7 +225,6 @@ ol {
 }
 
 .title {
-  padding-block-end: 23px;
   font-family: "Oswald", Arial, sans-serif;
   font-weight: 700;
   font-size: 75px;
@@ -325,13 +325,10 @@ ol {
   font-weight: 400;
   line-height: 90%;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
-  /* Ограничиваем текст четырьмя строками */
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   overflow: hidden;
-  text-overflow: ellipsis;
-  max-height: calc(1em * 4);
-  /* Ограничение высоты для 4 строк */
 }
 
 .content__video-card-thumbnail {
