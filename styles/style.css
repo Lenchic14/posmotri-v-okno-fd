@@ -10,7 +10,8 @@ html {
 
 .page {
   width: 100%;
-  overflow: hidden; /* Запрещаем прокрутку */
+  overflow: hidden;
+  /* Запрещаем прокрутку */
   margin: auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -218,9 +219,9 @@ ol {
 }
 
 .title {
-  font-family: "Oswald", sans-serif; /* Added fallback sans-serif */
+  font-family: "Oswald", sans-serif;
+  /* Added fallback sans-serif */
   padding-block-end: 23px;
-  font-family: "Oswald";
   font-weight: 700;
   font-size: 75px;
   line-height: 93%;
@@ -240,7 +241,7 @@ ol {
 .content__list {
   max-block-size: 298px;
   overflow: auto;
-  
+
   position: relative;
 }
 
@@ -304,7 +305,7 @@ ol {
 }
 
 .content__video-card-title {
-  font-family: "Oswald", sans-serif; 
+  font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 100%;
@@ -324,7 +325,8 @@ ol {
   line-height: 90%;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  -webkit-line-clamp: 4;
+  /* Limit to 4 lines */
   line-clamp: 4;
   overflow: hidden;
 }
