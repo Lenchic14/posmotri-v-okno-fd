@@ -10,6 +10,10 @@ html {
 
 
 .page {
+  display: flex;
+  flex-direction: column; /* Выровнять элементы по вертикали */
+  justify-content: center; /* Центрировать по вертикали */
+  align-items: center; /* Центрировать по горизонтали */
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -18,7 +22,7 @@ html {
   font-size: 18px;
   background-color: #1b1919;
   height: 100vh;
-  overflow: hidden;
+  overflow-y: auto; /* Даем возможность прокрутки по вертикали */
 }
 
 h1,
@@ -59,6 +63,15 @@ ol {
   min-inline-size: 711px;
   padding-block-start: 78px;
   position: relative;
+}
+
+.result__video-container::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Центрировать прелоадер */
+  font-size: 24px;
+  color: #fff;
 }
 
 .result__video {
@@ -342,8 +355,9 @@ ol {
 }
 
 .more-button {
-  padding: 6px 146px;
-  display: none;
+  padding: 6px 144px;
+  background-color: transparent;
+
 }
 
 .more-button:focus-visible {
