@@ -8,6 +8,7 @@ html {
   height: 100%;
 }
 
+
 .page {
   inline-size: 1200px;
   block-size: 100%;
@@ -51,6 +52,7 @@ ol {
 .result {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .result__video-container {
@@ -183,7 +185,7 @@ ol {
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   background-color: transparent;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 21px;
   border: 1px solid currentColor;
 }

@@ -1,11 +1,19 @@
 .preloader {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
   background: #545050;
+  width: 100%;
+  height: 100%;
+  max-width: 711px;
+  max-height: 400px; /* Ограничение высоты для соответствия макету */
+  border-radius: 10px; /* Скругление краев, если предусмотрено макетом */
 }
+
 
 .preloader-chasing-squares {
   width: 50px;
