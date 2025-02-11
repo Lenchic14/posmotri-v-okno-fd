@@ -65,6 +65,10 @@ ol {
   position: relative;
 }
 
+.result__video-container .preloader:not(:first-child) {
+  display: none;
+}
+
 .result__video-container::before {
   position: absolute;
   top: 50%;
