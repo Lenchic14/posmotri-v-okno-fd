@@ -348,6 +348,7 @@ ol {
 .more-button {
   padding: 6px 144px;
   display: none;
+  margin-top: 32px;
 }
 
 .more-button:focus-visible {
