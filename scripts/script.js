@@ -263,7 +263,7 @@ function showError(container, errorTemplate, errorMessage) {
   node.querySelector('.error__title').textContent = errorMessage;
   container.append(node);
   console.log('показал, ошибку');
-}
+}       
 
 // вывожу больше видео, если в пагинации больше страниц, чем показано
 
