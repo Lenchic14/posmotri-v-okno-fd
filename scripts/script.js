@@ -5,8 +5,7 @@ const BASE_URL = 'https://v-content.practicum-team.ru';
 const endpoint = `${BASE_URL}/api/videos?pagination[pageSize]=${cardsOnPage}&`;
 
 /* ЭЛЕМЕНТЫ СТРАНИЦЫ */
-const cardsList = document.querySelector('.content__list');
-const cardsContainer = document.querySelector('.content__list-container');
+const cardsContainer = document.querySelector('.content__list');
 const videoContainer = document.querySelector('.result__video-container');
 const videoElement = document.querySelector('.result__video');
 const form = document.querySelector('form');
@@ -31,27 +30,18 @@ mainMechanics(endpoint);
 // осуществляется поиск ✅
 form.onsubmit = (e) => {
   e.preventDefault();
-
-  cardsList.textContent = '';
-  const buttonInDOM = cardsContainer.querySelector('.more-button');
-  if (buttonInDOM) {
-    buttonInDOM.remove();
-  }
-
+  cardsContainer.textContent = '';
   [...videoContainer.children].forEach((el) => {
     el.className === 'error' && el.remove();
   });
-
   showPreloader(preloaderTmp, videoContainer);
   showPreloader(preloaderTmp, cardsContainer);
-
   const formData = serializeFormData(form);
   const requestUrl = generateFilterRequest(
     endpoint,
     formData.city,
     formData.timeArray
   );
-
   mainMechanics(requestUrl);
 };
 
@@ -70,7 +60,7 @@ async function mainMechanics(endpoint) {
       baseUrl: BASE_URL,
       dataArray: data.results,
       cardTmp,
-      container: cardsList,
+      container: cardsContainer,
     });
 
     setVideo({
@@ -86,10 +76,6 @@ async function mainMechanics(endpoint) {
     await delay(preloaderWaitindTime);
     removePreloader(videoContainer, '.preloader');
     removePreloader(cardsContainer, '.preloader');
-
-    // Добавляем класс для стилизации скроллбара
-    cardsContainer.classList.add('custom-scrollbar');
-
     chooseCurrentVideo({
       baseUrl: BASE_URL,
       videoData: cardsOnPageState,
@@ -101,7 +87,7 @@ async function mainMechanics(endpoint) {
     showMoreCards({
       dataArray: data,
       buttonTemplate: moreButtonTmp,
-      cardsList,
+      cardsContainer,
       buttonSelector: '.more-button',
       initialEndpoint: endpoint,
       baseUrl: BASE_URL,
@@ -117,17 +103,6 @@ async function mainMechanics(endpoint) {
     removePreloader(videoContainer, '.preloader');
     removePreloader(cardsContainer, '.preloader');
   }
-
-  document.querySelector('.content__list').addEventListener('scroll', function () {
-    const container = this;
-    const button = document.querySelector('.more-button');
-    
-    if (container.scrollHeight - container.scrollTop === container.clientHeight) {
-      button.style.display = 'block';
-    } else {
-      button.style.display = 'none';
-    }
-  });
 }
 
 /* УТИЛИТЫ */
@@ -263,14 +238,14 @@ function showError(container, errorTemplate, errorMessage) {
   node.querySelector('.error__title').textContent = errorMessage;
   container.append(node);
   console.log('показал, ошибку');
-}       
+}
 
 // вывожу больше видео, если в пагинации больше страниц, чем показано
 
 function showMoreCards({
   dataArray,
   buttonTemplate,
-  cardsList,
+  cardsContainer,
   buttonSelector,
   initialEndpoint,
   baseUrl,
@@ -294,7 +269,7 @@ function showMoreCards({
         baseUrl,
         dataArray: data.results,
         cardTmp,
-        container: cardsList,
+        container: cardsContainer,
       });
       chooseCurrentVideo({
         baseUrl: BASE_URL,
@@ -306,7 +281,7 @@ function showMoreCards({
       showMoreCards({
         dataArray: data,
         buttonTemplate,
-        cardsList,
+        cardsContainer,
         buttonSelector,
         initialEndpoint,
         baseUrl,
