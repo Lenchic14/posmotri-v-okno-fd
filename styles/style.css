@@ -69,21 +69,6 @@ ol {
   position: relative;
 }
 
-
-.result__video-container .preloader:not(:first-child) {
-  display: none;
-}
-
-.result__video-container::before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* Центрировать прелоадер */
-  font-size: 24px;
-  color: #fff;
-}
-
 .result__video {
   block-size: 386px;
   inline-size: 100%;
