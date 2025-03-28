@@ -28,6 +28,12 @@ html {
   /* Даем возможность прокрутки по вертикали */
 }
 
+.content__list:empty {
+  min-height: auto;
+  padding: 0;
+  margin: 0;
+}
+
 h1,
 h2,
 h3,
@@ -154,8 +160,9 @@ ol {
 }
 
 .search-form__textfield:active {
-  border-right: 1px solid #fff;
   border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  
 }
 
 .search-form__pseudo-checkbox {
@@ -231,6 +238,7 @@ ol {
 }
 
 .title {
+  width: 399px;
   font-family: "Oswald", sans-serif;
   /* Added fallback sans-serif */
   padding-block-end: 23px;
@@ -350,3 +358,6 @@ ol {
   object-fit: cover;
   object-position: center;
 }
+
+
+
