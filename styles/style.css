@@ -69,24 +69,24 @@ ol {
   justify-content: end;
 }
 
+
 .result__video-container {
   min-inline-size: 711px;
+  min-block-size: 385px;
   padding-block-start: 78px;
   position: relative;
+  margin-bottom: 10px;
 }
 
 .result__video {
-  block-size: 386px;
+  block-size: 385px;
+  min-block-size: 385px;
   inline-size: 100%;
   object-fit: cover;
 }
 
 .search-form {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-block-start: 11px;
   gap: 40px;
 }
 
@@ -109,7 +109,8 @@ ol {
   display: flex;
   flex-direction: row;
   gap: 15px;
-  padding-block-start: 4px;
+  padding-block-start: 3px;
+  padding-block-end: 3px;
 }
 
 .search-form__label {
