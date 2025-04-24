@@ -69,11 +69,10 @@ ol {
   justify-content: end;
 }
 
-
 .result__video-container {
-  min-inline-size: 711px;
-  min-block-size: 385px;
-  padding-block-start: 78px;
+  inline-size: 711px;
+  block-size: 385px;
+  margin-block-start: 78px;
   position: relative;
   margin-bottom: 10px;
 }

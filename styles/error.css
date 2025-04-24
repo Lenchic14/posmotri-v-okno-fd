@@ -1,18 +1,10 @@
 .error {
-  margin-top: 76px;
-  height: 386px;
-  position: absolute; /* Позиционирование относительно контейнера */
-  inset: 0; /* Заполняет весь контейнер */
+  position: absolute;
+  inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(84, 80, 80); /* Полупрозрачный фон */
-  color: #fff; /* Цвет текста */
-  font-family: Oswald, sans-serif;
-  font-size: 30px;
-  text-align: center;
-  text-transform: uppercase;
-  z-index: 10; /* Убедитесь, что сообщение об ошибке выше видео */
+  background-color: #545050;
 }
 
 .error__title {
